@@ -1,1 +1,71 @@
-<p>cadastra-edita-estagio works!</p>
+<mat-toolbar>{{
+  estagio && estagio.id ? "Editar estágio" : "Cadastrar estágio"
+}}</mat-toolbar>
+
+<div class="componente-container">
+  <form
+    class="form-padrao"
+    *ngIf="formGroup"
+    [formGroup]="formGroup"
+    (ngSubmit)="formGroup.valid && salvar()"
+    novalidate
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Aluno"
+        formControlName="aluno"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Estágio"
+        formControlName="estagio"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Orientador"
+        formControlName="orientador"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Status"
+        formControlName="status"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <div class="linha-botoes">
+      <button mat-raised-button color="primary" [disabled]="!formGroup.valid">
+        Salvar
+      </button>
+      <button
+        *ngIf="estagio && estagio.id"
+        type="button"
+        color="warn"
+        mat-raised-button
+        (click)="deletar()"
+      >
+        Deletar
+      </button>
+      <button type="button" mat-raised-button routerLink="/estagios">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
