@@ -20,6 +20,20 @@ const routes: Routes = [
     // tslint:disable-next-line:max-line-length
     loadChildren: () => import('./estagio/cadastra-edita-estagio/cadastra-edita-estagio.module').then(modulo => modulo.CadastraEditaEstagioModule)
   },
+  {
+    path: 'tccs',
+    loadChildren: () => import('./tcc/lista-tccs/lista-tccs.module').then(modulo => modulo.ListaTccsModule)
+  },
+  {
+    path: 'tccs/cadastrar',
+    // tslint:disable-next-line:max-line-length
+    loadChildren: () => import('./tcc/cadastra-edita-tcc/cadastra-edita-tcc.module').then(modulo => modulo.CadastraEditaTccModule)
+  },
+  {
+    path: 'tccs/editar/:id',
+    // tslint:disable-next-line:max-line-length
+    loadChildren: () => import('./tcc/cadastra-edita-tcc/cadastra-edita-tcc.module').then(modulo => modulo.CadastraEditaTccModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,71 @@
+<mat-toolbar>{{
+  tcc && tcc.id ? "Editar tcc" : "Cadastrar tcc"
+}}</mat-toolbar>
+
+<div class="componente-container">
+  <form
+    class="form-padrao"
+    *ngIf="formGroup"
+    [formGroup]="formGroup"
+    (ngSubmit)="formGroup.valid && salvar()"
+    novalidate
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Titulo"
+        formControlName="titulo"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Cronograma"
+        formControlName="cronograma"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Documento"
+        formControlName="documento"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Banca"
+        formControlName="banca"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+    <div class="linha-botoes">
+      <button mat-raised-button color="primary" [disabled]="!formGroup.valid">
+        Salvar
+      </button>
+      <button
+        *ngIf="tcc && tcc.id"
+        type="button"
+        color="warn"
+        mat-raised-button
+        (click)="deletar()"
+      >
+        Deletar
+      </button>
+      <button type="button" mat-raised-button routerLink="/tccs">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

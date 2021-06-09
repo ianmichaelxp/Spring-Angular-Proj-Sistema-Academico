@@ -13,7 +13,7 @@ export class ListaEstagiosComponent implements OnInit {
   estagios$: Observable<Estagio[]>;
   constructor(private estagioService: EstagioService) { }
 
-  colunasTabela = ['aluno', 'estagio', 'orientador', 'status'];
+  colunasTabela = ['estagio', 'aluno', 'orientador', 'status'];
 
   ngOnInit(): void {
     this.listarEstagios();

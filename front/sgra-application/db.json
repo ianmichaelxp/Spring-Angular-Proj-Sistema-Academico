@@ -1,20 +1,27 @@
 {
-  "estagios":[
+  "estagios": [
     {
-      "id":1,
-      "estagio":"Estagio s",
-      "aluno": "Ian",
-      "orientador": "Ewerton",
-      "status": "ok"
-
+      "aluno": "Ian Michael G",
+      "estagio": "ABC",
+      "orientador": "EWERTON",
+      "status": "Ativo",
+      "id": 1
+    }
+  ],
+  "tccs": [
+    {
+      "titulo": "Titulo",
+      "cronograma": "123",
+      "documento": "DOC",
+      "banca": "Profs",
+      "id": 1
     },
     {
-      "id":2,
-      "estagio":"Estagio s",
-      "aluno": "Ian",
-      "orientador": "Ewerton",
-      "status": "ok"
-
+      "id": 2,
+      "titulo": "Titulo test",
+      "cronograma": "cronograma test",
+      "documento": "doc test",
+      "banca": "banca test"
     }
   ]
 }
