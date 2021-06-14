@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { TccService } from '../../tcc.service';
 import { Component, OnInit } from '@angular/core';
-import { Tcc } from '../../tcc.model';
+import { Tcc } from '../../../models/tcc.model';
 
 @Component({
   selector: 'app-lista-tccs',

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Estagio } from './estagio.model';
+import { Estagio } from '../models/estagio.model';
 
 @Injectable({
   providedIn: 'root',

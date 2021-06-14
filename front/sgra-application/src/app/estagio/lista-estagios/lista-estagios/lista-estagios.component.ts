@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { EstagioService } from './../../estagio.service';
 import { Component, OnInit } from '@angular/core';
-import { Estagio } from '../../estagio.model';
+import { Estagio } from '../../../models/estagio.model';
 
 @Component({
   selector: 'app-lista-estagios',

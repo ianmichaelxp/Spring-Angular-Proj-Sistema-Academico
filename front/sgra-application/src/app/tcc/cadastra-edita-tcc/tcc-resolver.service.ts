@@ -1,4 +1,4 @@
-import { Tcc } from '../tcc.model';
+import { Tcc } from '../../models/tcc.model';
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { TccService } from '../tcc.service';

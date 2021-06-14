@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Tcc } from './tcc.model';
+import { Tcc } from '../models/tcc.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,12 +9,19 @@ import { Tcc } from './tcc.model';
 export class TccService {
   private url = 'http://localhost:3000';
   private endpoint = 'tccs';
+  private listaTccs: Tcc[];
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+    this.listaTccs = [];
+  }
+
+  get tccs(): Tcc[]{
+    return this.listaTccs;
+  }
 
   listar(): Observable<Tcc[]> {
     return this.httpClient.get<Tcc[]>(`${this.url}/${this.endpoint}`);
-  }
+    }
 
   cadastrar(tcc: Tcc): Observable<Tcc> {
     return this.httpClient.post<Tcc>(

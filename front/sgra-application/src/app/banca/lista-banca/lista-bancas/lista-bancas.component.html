@@ -1,0 +1,27 @@
+<mat-toolbar>Lista de bancas</mat-toolbar>
+
+<div class="componente-container">
+  <div *ngIf="professores$ | async as professores; else loading">
+    <!-- <li *ngFor="let banca of bancas">{{banca.nome}}</li> -->
+    <mat-form-fild appearance="fill">
+      <mat-label>Top</mat-label>
+      <mat-select [formControl]="toppings" multiple>
+          <mat-option *ngFor="let professor of professores" [value]="professor"> {{professor.id}}</mat-option>
+      </mat-select>
+    </mat-form-fild>
+
+    <div class="linha-botoes">
+      <button mat-raised-button color="primary" routerLink="/bancas/cadastrar">
+        Cadastrar
+      </button>
+    </div>
+  </div>
+
+  <!-- <ul *ngIf="bancas$ | async as bancas; else loading">
+  <li *ngFor="let banca of bancas">{{banca.nome}}</li>
+</ul> -->
+
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

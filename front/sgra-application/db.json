@@ -6,6 +6,13 @@
       "orientador": "EWERTON",
       "status": "Ativo",
       "id": 1
+    },
+    {
+      "id": 2,
+      "estagio": "mi",
+      "aluno": "ian",
+      "orientador": "oio",
+      "status": "ol"
     }
   ],
   "tccs": [
@@ -22,6 +29,57 @@
       "cronograma": "cronograma test",
       "documento": "doc test",
       "banca": "banca test"
+    },
+    {
+      "id": 3,
+      "titulo": "oi",
+      "cronograma": "io",
+      "documento": "oi",
+      "banca": "oi"
+    }
+  ],
+  "bancas": [
+    {
+      "id": 1,
+      "integrantes": [
+        {
+          "id": 1,
+          "matricula": 123,
+          "curso": "Sistemas",
+          "usuario": "Usuario"
+        },
+        {
+          "id": 2,
+          "matricula": 234,
+          "curso": "Sistemas Dois",
+          "usuario": "Usuario Dois"
+        }
+      ],
+      "data": "12/05/2016"
+    },
+    {
+      "id": 2,
+      "integrantes": [
+        {
+          "id": 1,
+          "matricula": 123,
+          "curso": "Sistemas",
+          "usuario": "Usuario"
+        }
+      ],
+      "data": "1205"
+    },
+    {
+      "id": 3,
+      "integrantes": [
+        {
+          "id": 1,
+          "matricula": 123,
+          "curso": "Sistemas",
+          "usuario": "Usuario"
+        }
+      ],
+      "data": "s"
     }
   ]
 }

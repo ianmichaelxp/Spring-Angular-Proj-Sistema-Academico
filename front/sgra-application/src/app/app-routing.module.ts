@@ -34,6 +34,16 @@ const routes: Routes = [
     // tslint:disable-next-line:max-line-length
     loadChildren: () => import('./tcc/cadastra-edita-tcc/cadastra-edita-tcc.module').then(modulo => modulo.CadastraEditaTccModule)
   },
+  {
+    path: 'bancas/cadastrar',
+    // tslint:disable-next-line:max-line-length
+    loadChildren: () => import('./banca/cadastra-edita-banca/cadastra-edita-banca.module').then(modulo => modulo.CadastraEditaBancaModule)
+  },
+  {
+    path: 'bancas/editar/:id',
+    // tslint:disable-next-line:max-line-length
+    loadChildren: () => import('./banca/cadastra-edita-banca/cadastra-edita-banca.module').then(modulo => modulo.CadastraEditaBancaModule)
+  },
 ];
 
 @NgModule({

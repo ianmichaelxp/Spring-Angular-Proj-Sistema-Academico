@@ -1,0 +1,63 @@
+<mat-toolbar>{{
+  banca && banca.id ? "Editar banca" : "Cadastrar banca"
+}}</mat-toolbar>
+
+<div class="componente-container">
+   <form
+    class="form-padrao"
+    *ngIf="formGroup"
+    [formGroup]="formGroup"
+    (ngSubmit)="formGroup.valid && salvar()"
+    novalidate
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Data da banca"
+        formControlName="data"
+        required
+        autocomplete="off"
+      />
+      <mat-error>Campo é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Integrantes</mat-label>
+      <mat-select formControlName="integrantes" [(value)]="selected" multiple>
+        <mat-select-trigger>
+          {{ selected ? selected[0].matricula : '' }}
+          <span
+            *ngIf="selected?.length > 1"
+            class="example-additional-selection"
+          >
+            (+{{ selected.length - 1 }}
+            {{ selected?.length === 2 ? "other" : "others" }})
+          </span>
+        </mat-select-trigger>
+        <mat-option
+          *ngFor="let professor of listaProfessores"
+          [value]="professor"
+          >{{ professor.matricula }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <div class="linha-botoes">
+      <button mat-raised-button color="primary" [disabled]="!formGroup.valid">
+        Salvar
+      </button>
+      <button
+        *ngIf="banca && banca.id"
+        type="button"
+        color="warn"
+        mat-raised-button
+        (click)="deletar()"
+      >
+        Deletar
+      </button>
+      <button type="button" mat-raised-button routerLink="/bancas">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
