@@ -38,4 +38,8 @@ export class BancaService {
   deletar(banca: Banca): Observable<{}> {
     return this.httpClient.delete(`${this.url}/${this.endpoint}/${banca.id}`);
   }
+
+  listarProfessores(): Observable<Professor[]> {
+    return this.httpClient.get<Professor[]>(`${this.url}/professores`);
+  }
 }

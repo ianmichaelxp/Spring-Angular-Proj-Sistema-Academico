@@ -1,3 +1,4 @@
+import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
@@ -23,6 +24,7 @@ import { CadastraEditaTccComponent } from './cadastra-edita-tcc/cadastra-edita-t
     MatInputModule,
     MatToolbarModule,
     MatButtonModule,
+    MatSelectModule,
 
   ]
 })

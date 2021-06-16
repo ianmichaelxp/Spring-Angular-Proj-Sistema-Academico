@@ -35,7 +35,7 @@
           </span>
         </mat-select-trigger>
         <mat-option
-          *ngFor="let professor of listaProfessores"
+          *ngFor="let professor of listaProfessores | async"
           [value]="professor"
           >{{ professor.matricula }}</mat-option
         >

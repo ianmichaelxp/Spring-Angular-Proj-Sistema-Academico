@@ -36,6 +36,24 @@
       "cronograma": "io",
       "documento": "oi",
       "banca": "oi"
+    },
+    {
+      "id": 4,
+      "titulo": "ian testador",
+      "cronograma": "cron",
+      "documento": "doc",
+      "banca": {
+        "id": 3,
+        "integrantes": [
+          {
+            "id": 1,
+            "matricula": 123,
+            "curso": "Sistemas",
+            "usuario": "Usuario"
+          }
+        ],
+        "data": "s"
+      }
     }
   ],
   "bancas": [
@@ -44,15 +62,9 @@
       "integrantes": [
         {
           "id": 1,
-          "matricula": 123,
-          "curso": "Sistemas",
-          "usuario": "Usuario"
-        },
-        {
-          "id": 2,
-          "matricula": 234,
-          "curso": "Sistemas Dois",
-          "usuario": "Usuario Dois"
+          "matricula": 13135500,
+          "curso": "Sistemas de Informação",
+          "usuario": "Hamruábi"
         }
       ],
       "data": "12/05/2016"
@@ -80,6 +92,76 @@
         }
       ],
       "data": "s"
+    },
+    {
+      "id": 4,
+      "integrantes": [
+        {
+          "id": 2,
+          "matricula": 88005588,
+          "curso": "Sistemas",
+          "usuario": "Sistemas de Informação"
+        }
+      ],
+      "data": "12345"
+    },
+    {
+      "id": 5,
+      "integrantes": [
+        null,
+        null
+      ],
+      "data": "12052020"
+    },
+    {
+      "id": 6,
+      "integrantes": [
+        {
+          "id": 1,
+          "matricula": 13135500,
+          "curso": "Sistemas de Informação",
+          "usuario": "Hamruábi"
+        },
+        {
+          "id": 2,
+          "matricula": 88005588,
+          "curso": "Sistemas",
+          "usuario": "Sistemas de Informação"
+        }
+      ],
+      "data": "aaaaaa"
+    },
+    {
+      "id": 7,
+      "integrantes": [
+        {
+          "id": 1,
+          "matricula": 13135500,
+          "curso": "Sistemas de Informação",
+          "usuario": "Hamruábi"
+        },
+        {
+          "id": 2,
+          "matricula": 88005588,
+          "curso": "Sistemas",
+          "usuario": "Sistemas de Informação"
+        }
+      ],
+      "data": "21/12/2021"
+    }
+  ],
+  "professores": [
+    {
+      "id": 1,
+      "matricula": 13135500,
+      "curso": "Sistemas de Informação",
+      "usuario": "Hamruábi"
+    },
+    {
+      "id": 2,
+      "matricula": 88005588,
+      "curso": "Sistemas",
+      "usuario": "Sistemas de Informação"
     }
   ]
 }

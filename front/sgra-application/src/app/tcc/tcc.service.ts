@@ -1,3 +1,4 @@
+import { Banca } from './../models/banca.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -42,5 +43,9 @@ export class TccService {
 
   deletar(tcc: Tcc): Observable<{}> {
     return this.httpClient.delete(`${this.url}/${this.endpoint}/${tcc.id}`);
+  }
+
+  listarBancas(): Observable<Banca[]> {
+    return this.httpClient.get<Banca[]>(`${this.url}/bancas`);
   }
 }

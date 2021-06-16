@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Professor } from './../../../models/professor.model';
 import { Banca } from '../../../models/banca.model';
 import { Component, OnInit } from '@angular/core';
@@ -19,21 +20,22 @@ export class CadastraEditaBancaComponent implements OnInit {
   formGroup: FormGroup;
   banca: Banca;
   // integrantesBanca: Professor[];
-  listaProfessores: Professor[] = [
-    {
-      id: 1,
-      matricula: 123,
-      curso: 'Sistemas',
-      usuario: 'Usuario',
-    },
-    {
-      id: 2,
-      matricula: 234,
-      curso: 'Sistemas Dois',
-      usuario: 'Usuario Dois',
-    },
-  ];
+  // listaProfessores: Professor[] = [
+  //   {
+  //     id: 1,
+  //     matricula: 123,
+  //     curso: 'Sistemas',
+  //     usuario: 'Usuario',
+  //   },
+  //   {
+  //     id: 2,
+  //     matricula: 234,
+  //     curso: 'Sistemas Dois',
+  //     usuario: 'Usuario Dois',
+  //   },
+  // ];
 
+  listaProfessores: Observable<Professor[]>;
   // integrantes = new FormControl();
   constructor(
     private formBuilder: FormBuilder,
@@ -47,6 +49,7 @@ export class CadastraEditaBancaComponent implements OnInit {
   //   banca: string;
 
   ngOnInit(): void {
+    this.listaProfessores = this.bancaService.listarProfessores();
     this.banca = this.activatedRoute.snapshot.data['banca'];
     this.formGroup = this.formBuilder.group({
       id: [this.banca && this.banca.id ? this.banca.id : null],
@@ -56,6 +59,16 @@ export class CadastraEditaBancaComponent implements OnInit {
         Validators.required,
       ],
     });
+  }
+
+  setIntegrantes(){
+    this.formGroup.get('integrantes').setValue(this.listaProfessores);
+    console.log(this.formGroup.get('integrantes'));
+
+  }
+
+  compararIntegrantes(obj1, obj2){
+    return obj1 && obj2 ? (obj1.id === obj2.id) : obj1 === obj2;
   }
 
   salvar(): void {

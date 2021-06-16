@@ -41,18 +41,31 @@
       <mat-error>Campo é obrigatório</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input
-        matInput
-        placeholder="Banca"
-        formControlName="banca"
-        required
-        autocomplete="off"
-      />
-      <mat-error>Campo é obrigatório</mat-error>
+      <mat-label>Banca</mat-label>
+      <mat-select formControlName="banca" [(value)]="selected" [compareWith]="comparar">
+        <mat-select-trigger>
+          {{ selected ? selected.data : '' }}
+          <span
+            *ngIf="selected?.length > 1"
+            class="example-additional-selection"
+          >
+            (+{{ selected.length - 1 }}
+            {{ selected?.length === 2 ? "other" : "others" }})
+          </span>
+        </mat-select-trigger>
+        <mat-option
+          *ngFor="let banca of listaBancas | async"
+          [value]="banca"
+          >{{ banca.data }}</mat-option
+        >
+      </mat-select>
     </mat-form-field>
     <div class="linha-botoes">
       <button mat-raised-button color="primary" [disabled]="!formGroup.valid">
         Salvar
+      </button>
+      <button type="button" mat-raised-button routerLink="/bancas/cadastrar">
+        Cadastrar banca
       </button>
       <button
         *ngIf="tcc && tcc.id"

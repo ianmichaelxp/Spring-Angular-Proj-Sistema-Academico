@@ -1,3 +1,5 @@
+import { Banca } from './../../../models/banca.model';
+import { Observable } from 'rxjs';
 import { Tcc } from '../../../models/tcc.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -12,13 +14,15 @@ import { TccService } from '../../tcc.service';
 export class CadastraEditaTccComponent implements OnInit {
   formGroup: FormGroup;
   tcc: Tcc;
+  listaBancas: Observable<Banca[]>;
+  selected: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private tccService: TccService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) // public matDialog: MatDialog,
-  // public matSnackBar: MatSnackBar
+    private activatedRoute: ActivatedRoute // public matDialog: MatDialog,
+  ) // public matSnackBar: MatSnackBar
   {}
 
   //   cronograma: string;
@@ -26,6 +30,7 @@ export class CadastraEditaTccComponent implements OnInit {
   //   banca: string;
 
   ngOnInit(): void {
+    this.listaBancas = this.tccService.listarBancas();
     this.tcc = this.activatedRoute.snapshot.data['tcc'];
     this.formGroup = this.formBuilder.group({
       id: [this.tcc && this.tcc.id ? this.tcc.id : null],
@@ -46,13 +51,18 @@ export class CadastraEditaTccComponent implements OnInit {
         Validators.required,
       ],
     });
+    this.selected = this.tcc.banca;
+  }
+
+  comparar(a,b){
+    return a && b ? (a.id === b.id) : a === b;
   }
 
   salvar(): void {
     if (this.tcc && this.tcc.id) {
       this.tccService.atualizar(this.formGroup.value).subscribe(
         (tccAtualizado) => {
-          this.router.navigateByUrl('/Tccs');
+          this.router.navigateByUrl('/tccs');
         },
         (err) => {
           console.error(err);
