@@ -1,3 +1,5 @@
+import { Aluno } from './../models/aluno.model';
+import { Professor } from './../models/professor.model';
 import { Banca } from './../models/banca.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -47,5 +49,13 @@ export class TccService {
 
   listarBancas(): Observable<Banca[]> {
     return this.httpClient.get<Banca[]>(`${this.url}/bancas`);
+  }
+
+  listarOrientadores(): Observable<Professor[]> {
+    return this.httpClient.get<Professor[]>(`${this.url}/professores`);
+  }
+
+  listarAlunos(): Observable<Aluno[]> {
+    return this.httpClient.get<Aluno[]>(`${this.url}/alunos`);
   }
 }

@@ -60,6 +60,60 @@
         >
       </mat-select>
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Aluno</mat-label>
+      <mat-select formControlName="aluno" [(value)]="selectedAluno" [compareWith]="comparar">
+        <mat-select-trigger>
+          {{ selectedAluno ? selectedAluno.matricula : '' }}
+          <span
+            *ngIf="selectedAluno?.length > 1"
+            class="example-additional-selection"
+          >
+            (+{{ selectedAluno.length - 1 }}
+            {{ selectedAluno?.length === 2 ? "other" : "others" }})
+          </span>
+        </mat-select-trigger>
+        <mat-option
+          *ngFor="let aluno of alunos | async"
+          [value]="aluno"
+          >{{ aluno.matricula }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Orientador</mat-label>
+      <mat-select formControlName="orientador" [(value)]="selectedOrientador" [compareWith]="comparar">
+        <mat-select-trigger>
+          {{ selectedOrientador ? selectedOrientador.matricula : '' }}
+          <span
+            *ngIf="selectedOrientador?.length > 1"
+            class="example-additional-selection"
+          >
+            (+{{ selectedOrientador.length - 1 }}
+            {{ selectedOrientador?.length === 2 ? "other" : "others" }})
+          </span>
+        </mat-select-trigger>
+        <mat-option
+          *ngFor="let orientador of orientadores | async"
+          [value]="orientador"
+          >{{ orientador.matricula }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status" [(value)]="selectedStatus">
+        <mat-option
+          value="autorizado"
+          >autorizado</mat-option
+        >
+        <mat-option
+          value="pendente"
+          >pendente</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
     <div class="linha-botoes">
       <button mat-raised-button color="primary" [disabled]="!formGroup.valid">
         Salvar

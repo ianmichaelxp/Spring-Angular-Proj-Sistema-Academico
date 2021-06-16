@@ -1,61 +1,5 @@
 {
-  "estagios": [
-    {
-      "aluno": "Ian Michael G",
-      "estagio": "ABC",
-      "orientador": "EWERTON",
-      "status": "Ativo",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "estagio": "mi",
-      "aluno": "ian",
-      "orientador": "oio",
-      "status": "ol"
-    }
-  ],
-  "tccs": [
-    {
-      "titulo": "Titulo",
-      "cronograma": "123",
-      "documento": "DOC",
-      "banca": "Profs",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "titulo": "Titulo test",
-      "cronograma": "cronograma test",
-      "documento": "doc test",
-      "banca": "banca test"
-    },
-    {
-      "id": 3,
-      "titulo": "oi",
-      "cronograma": "io",
-      "documento": "oi",
-      "banca": "oi"
-    },
-    {
-      "id": 4,
-      "titulo": "ian testador",
-      "cronograma": "cron",
-      "documento": "doc",
-      "banca": {
-        "id": 3,
-        "integrantes": [
-          {
-            "id": 1,
-            "matricula": 123,
-            "curso": "Sistemas",
-            "usuario": "Usuario"
-          }
-        ],
-        "data": "s"
-      }
-    }
-  ],
+  "estagios": [],
   "bancas": [
     {
       "id": 1,
@@ -65,89 +9,84 @@
           "matricula": 13135500,
           "curso": "Sistemas de Informação",
           "usuario": "Hamruábi"
+        },
+        {
+          "id": 2,
+          "matricula": 88005588,
+          "curso": "Sistemas",
+          "usuario": "Sistemas de Informação"
         }
       ],
-      "data": "12/05/2016"
+      "data": "30/06/2021"
     },
     {
       "id": 2,
       "integrantes": [
         {
           "id": 1,
-          "matricula": 123,
-          "curso": "Sistemas",
-          "usuario": "Usuario"
-        }
-      ],
-      "data": "1205"
-    },
-    {
-      "id": 3,
-      "integrantes": [
-        {
-          "id": 1,
-          "matricula": 123,
-          "curso": "Sistemas",
-          "usuario": "Usuario"
-        }
-      ],
-      "data": "s"
-    },
-    {
-      "id": 4,
-      "integrantes": [
-        {
-          "id": 2,
-          "matricula": 88005588,
-          "curso": "Sistemas",
-          "usuario": "Sistemas de Informação"
-        }
-      ],
-      "data": "12345"
-    },
-    {
-      "id": 5,
-      "integrantes": [
-        null,
-        null
-      ],
-      "data": "12052020"
-    },
-    {
-      "id": 6,
-      "integrantes": [
-        {
-          "id": 1,
           "matricula": 13135500,
           "curso": "Sistemas de Informação",
           "usuario": "Hamruábi"
-        },
-        {
-          "id": 2,
-          "matricula": 88005588,
-          "curso": "Sistemas",
-          "usuario": "Sistemas de Informação"
         }
       ],
-      "data": "aaaaaa"
+      "data": "01/07/2021"
+    }
+  ],
+  "tccs": [
+    {
+      "id": 1,
+      "titulo": "Mapa Calor",
+      "cronograma": "link.cronograma.com.br",
+      "documento": "link.doc.com.br",
+      "banca": {
+        "id": 1,
+        "integrantes": [
+          {
+            "id": 1,
+            "matricula": 13135500,
+            "curso": "Sistemas de Informação",
+            "usuario": "Hamruábi"
+          },
+          {
+            "id": 2,
+            "matricula": 88005588,
+            "curso": "Sistemas",
+            "usuario": "Sistemas de Informação"
+          }
+        ],
+        "data": "30/06/2021"
+      }
     },
     {
-      "id": 7,
-      "integrantes": [
-        {
-          "id": 1,
-          "matricula": 13135500,
-          "curso": "Sistemas de Informação",
-          "usuario": "Hamruábi"
-        },
-        {
-          "id": 2,
-          "matricula": 88005588,
-          "curso": "Sistemas",
-          "usuario": "Sistemas de Informação"
-        }
-      ],
-      "data": "21/12/2021"
+      "id": 2,
+      "titulo": "Tcc Sistemas de Informação",
+      "cronograma": "Link cronograma",
+      "documento": "lINK DO DOCUMENTO",
+      "banca": {
+        "id": 2,
+        "integrantes": [
+          {
+            "id": 1,
+            "matricula": 13135500,
+            "curso": "Sistemas de Informação",
+            "usuario": "Hamruábi"
+          }
+        ],
+        "data": "01/07/2021"
+      },
+      "status": "autorizado",
+      "aluno": {
+        "id": 1,
+        "matricula": 1523080013,
+        "curso": "Sistemas de Informação",
+        "usuario": "ian"
+      },
+      "orientador": {
+        "id": 1,
+        "matricula": 13135500,
+        "curso": "Sistemas de Informação",
+        "usuario": "Hamruábi"
+      }
     }
   ],
   "professores": [
@@ -163,5 +102,20 @@
       "curso": "Sistemas",
       "usuario": "Sistemas de Informação"
     }
-  ]
+  ],
+  "alunos": [
+    {
+      "id": 1,
+      "matricula": 1523080013,
+      "curso": "Sistemas de Informação",
+      "usuario": "ian"
+    },
+    {
+      "id": 2,
+      "matricula": 15230088550,
+      "curso": "Sistemas",
+      "usuario": "Fulano de tal"
+    }
+  ],
+  "cadastroTccs": []
 }
